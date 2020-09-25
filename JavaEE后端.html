@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaEE后端</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>JavaEE简介</h1>
+<blockquote>
+<p><img src="j1.png" alt="市场份额" /><br />
+java工程师的数量以900万位居世界第一。不光程序员的数量多，对于java EE工程师的需求也是位居首位的。</p>
+</blockquote>
+<h1>JavaEE是什么？</h1>
+<blockquote>
+<p>JAVAEE是一个开发分布式企业级应用的规范和标准。</p>
+<p><strong>JavaME</strong>（Java Platform Micro Edition，Java微型版）</p>
+<blockquote>
+<p>适用于小型设备和智能卡(Java ME 为在移动设备和嵌入式设备（比如手机、PDA、电视机顶盒和打印机）上运行的应用程序提供一个健壮且灵活的环境。)</p>
+</blockquote>
+<p><strong>JavaSE</strong>（Java Platform Micro Edition，Java标准版）</p>
+<blockquote>
+<p>适用于桌面系统(它允许开发和部署在桌面、服务器、嵌入式环境和实时环境中使用的Java应用程序。)</p>
+</blockquote>
+<p><strong>JavaEE</strong>（Java Platform Enterprise Edition，Java企业版）</p>
+<blockquote>
+<ol>
+<li>企业版本帮助开发和部署可移植、健壮、可伸缩且安全的服务器端 Java 应用程序。Java EE 是在 Java SE 的基础上构建的，它提供 Web 服务、组件模型、管理和通信 API，可以用来实现企业级的面向服务体系结构（service-oriented architecture，SOA）和 Web 2.0 应用程序；</li>
+<li>java EE就是一个用于搭建开发企业级WEB服务器的一门工具。他需要一些框架的支持。</li>
+</ol>
+</blockquote>
+<p><strong>应用架构</strong>  
+</p>
+<blockquote>
+<p><strong>C/S</strong></p>
+<blockquote>
+<p>C/S 结构，即大家熟知的客户机和服务器结构。它是软件系统体系结构，通过它可以充分利用两端硬件环境的优势，将任务合理分配到Client端和Server端来实现，降低了系统的通讯开销。 目前大多数应用软件系统都是Client/Server形式的两层结构，由于现在的软件应用系统正在向分布式的Web应用发展，Web和Client/Server 应用都可以进行同样的业务处理，应用不同的模块共享逻辑组件;因此，内部的和外部的用户都可以访问新的和现有的应用系统，通过现有应用系统中的逻辑可以扩展出新的应用系统。这也就是目前应用系统的发展方向。 </p>
+</blockquote>
+<p><strong>B/S</strong></p>
+<blockquote>
+<p>B/S结构(Browser/Server，浏览器/服务器模式)，是WEB兴起后的一种网络结构模式，WEB浏览器是客户端最主要的应用软件。这种模式统一了客户端，将系统功能实现的核心部分集中到服务器上，简化了系统的开发、维护和使用。客户机上只要安装一个浏览器，服务器安装SQL Server、Oracle、MYSQL等数据库。浏览器通过Web Server 同数据库进行数据交互。 </p>
+</blockquote>
+</blockquote>
+<p><strong>框架</strong></p>
+<blockquote>
+<p>Struts框架、Hibernate框架、Spring框架。那到底什么框架呢，其实框架就是应用的半成品，比如我们买的房子，再买来的时候里面什么也没有，但是他已经是一个房子了，我们要住的话必须要进行装修才可以。这里的房子就相当于是框架。  
+</p>
+<p><img src="j2.png" /><br />
+javaEE和框架的关系</p>
+</blockquote>
+<p>常用框架</p>
+<blockquote>
+<p><strong>Struts:</strong>使用Struts的目的是为了帮助我们减少在运用MVC设计模型来开发Web应用的时间。如果我们想混合使用Servlets和JSP的优点来建立可扩展的应用，struts是一个不错的选择。</p>
+<p><strong>Hibernate:</strong>是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。 Hibernate可以应用在任何使用JDBC的场合，既可以在Java的客户端程序使用，也可以在Servlet/JSP的Web应用中使用，最具革命意义的是，Hibernate可以在应用EJB的J2EE架构中取代CMP，完成数据持久化的重任。</p>
+<p><strong>Spring:</strong>是一个开源框架，Spring是于2003 年兴起的一个轻量级的Java 开发框架，由Rod Johnson创建。简单来说，Spring是一个分层的JavaSE/EEfull-stack(一站式) 轻量级开源框架。</p>
+</blockquote>
+</blockquote>
+<h1>MVC设计模式</h1>
+<blockquote>
+<p>MVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中。</p>
+<ol>
+<li><strong>Model（模型）</strong>是应用程序中用于处理应用程序数据逻辑的部分。 通常模型对象负责在数据库中存取数据。</li>
+<li><strong>View（视图）</strong>是应用程序中处理数据显示的部分。 通常视图是依据模型数据创建的。</li>
+<li><strong>Controller（控制器）</strong>是应用程序中处理用户交互的部分。 通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</li>
+</ol>
+<p><strong>MVC框架优点</strong></p>
+<blockquote>
+<p>MVC 分层有助于管理复杂的应用程序，因为您可以在一个时间内专门关注一个方面。例如，您可以在不依赖业务逻辑的情况下专注于视图设计。同时也让应用程序的测试更加容易。MVC 分层同时也简化了分组开发。不同的开发人务逻辑。</p>
+</blockquote>
+<p><img src="j3.png" alt="MVC框架图" /></p>
+<p><strong>设计模式和框架</strong></p>
+<blockquote>
+<ol>
+<li>框架、设计模式这两个概念总容易被混淆，其实它们之间还是有区别的。框架通常是代码重用，而设计模式是设计重用，架构则介于两者之间，部分代码重用，部分设计重用，有时分析也可重用。在软件生产中有三种级别的重用：内部重用，即在同一应用中能公共使用的抽象块;代码重用，即将通用模块组合成库或工具集，以便在多个应用和领域都能使用；应用框架的重用，即为专用领域提供通用的或现成的基础结构，以获得最高级别的重用性。</li>
+<li>框架与设计模式虽然相似，但却有着根本的不同。设计模式是对在某种环境中反复出现的问题以及解决该问题的方案的描述，它比框架更抽象；框架可以用代码表示，也能直接执行或复用，而对模式而言只有实例才能用代码表示;设计模式是比框架更小的元素，一个框架中往往含有一个或多个设计模式，框架总是针对某一特定应用领域，但同一模式却可适用于各种应用。可以说，框架是软件，而设计模式是软件的知识。</li>
+</ol>
+</blockquote>
+</blockquote>
+<h1>市场需求</h1>
+<ol>
+<li>
+开发企业内部的管理软件
+<ol>
+<li>
+CRM： Customer Relationship Management（客户关系管理）
+<ol>
+<li>通常CRM包括销售管理、市场营销管理、客户服务系统以及呼叫中心等方面</li>
+</ol>
+</li>
+<li>OA：Office Automation System（办公自动化系统）</li>
+<li>ERP：Enterprise Resource Planning（企业资源计划）</li>
+</ol>
+</li>
+<li>
+Web网站 开发
+<ol>
+<li>银行</li>
+<li>大型购物网站</li>
+</ol>
+</li>
+<li>
+ERP+大数据 
+<ol>
+<li>销售预测</li>
+<li>排程</li>
+<li>供应链完善</li>
+<li>更好的招聘做法</li>
+</ol>
+</li>
+<li>
+OA+大数据
+<ol>
+<li>管理自动化</li>
+<li>工作流程自动化</li>
+<li>辅助办公自动化</li>
+</ol>
+</li>
+</ol>
+<h1>WEB项目构成</h1>
+<blockquote>
+<ol>
+<li>
+美工部分
+<ol>
+<li>主要提供图片，设计规划页面的板式，勾画出网页的视觉体验。</li>
+</ol>
+</li>
+<li>
+前端部分
+<ol>
+<li>基于美工提供的图片和需求进行代码加工，也就是网页上我们看到的页面编写，但是编写完成后还都是静态的，不具备交互性。这就是前端部分。</li>
+</ol>
+</li>
+<li>
+后端部分
+<ol>
+<li>主要对前端已经形成的页面进行功能的完善，实现动态网站效果，例如：将数据库中的数据展现在前端页面中；</li>
+</ol>
+</li>
+<li>
+上线测试部分
+<ol>
+<li>在网站上线前，要对网站的功能进行测试，查找bug，这是Web项目中最简单也是最后的一道程序;</li>
+</ol>
+</li>
+</ol>
+<p><strong>项目开发流程</strong>  
+</p>
+<blockquote>
+<p><img src="j4.png" /></p>
+<ol>
+<li><strong>需求分析：</strong>美工对网页进行美观和功能的实现进行设计。</li>
+<li><strong>前端页面布局：</strong>前端工程更具效果图和美工提供的图片进行布局。</li>
+<li><strong>数据库设计：</strong>后台工程师针对客户需求设计数据库；需要考虑减少内存，执行速度快，垃圾少等多方面的逻辑设置。</li>
+<li><strong>后台功能完善：</strong>根据数据库、前端页面进行后台功能的实现，将静态页面加工成动态网页，进行数据交互等</li>
+<li><strong>项目测试：</strong>对即将上线的项目进行功能测试（检测功能是否完善，是否存在bug等）</li>
+<li><strong>项目上线：</strong>用户可以使用浏览器直接去访问了。</li>
+<li><strong>跟踪维护：</strong>刚刚上线的网站容易出现故障，需要跟踪维护一段时间，确保网站出现故障能够得到及时处理</li>
+</ol>
+</blockquote>
+</blockquote>
+<h1>Java工程介绍</h1>
+<blockquote>
+<p><strong>创建Web工程:</strong>FIle-&gt;New-&gt;Dynamic Web Project<br />
+<strong>Dynamic Web Project：</strong>If you want to create a content-based Web application that does not contain any dynamic content (such as servlets, JSP files, filters, and associated metadata) you might prefer to create a static Web project, as opposed to a dynamic Web project.（如果你想建立的工程呢个不包括动态内容如：（servlets、JSP files、filters 和 ssoicated metadata）的话，建立static Web Project，否则建立dynamic Web Project）
+<strong>Dynamic Web Project项目结构</strong></p>
+<blockquote>
+<p><img src="j5.png" /></p>
+<p>Deployment Descriptor:project name</p>
+<blockquote>
+<p>系统更具项目配置文件生成的环境参数、过滤器、监听器、servlet、欢迎页面、错误页面等</p>
+</blockquote>
+<p>java Resources</p>
+<blockquote>
+<p>存放java源码的包</p>
+</blockquote>
+<p>javaScript Resources</p>
+<blockquote>
+<p>系统自动添加的一些数据资源，忽略即可。</p>
+</blockquote>
+<p>build</p>
+<blockquote>
+<p>build用于存放.java文件编译后的class存放</p>
+</blockquote>
+<p>WebContent
+存放用于前端显示的一些jsp文件和配置资源等</p>
+</blockquote>
+</blockquote>
+<h1>项目设计规范</h1>
+<blockquote>
+<p>因为web项目开发是一个团队合作的项目，所有需要有一定的规范来进行约束，加快开发速度和工作效率。只有每个开发人员都按照一个共同的规范去设计、沟通、开发、测试、部署，才能保证整个开发团队协调一致的工作，从而提高开发工作效率，提升工程项目质量。</p>
+<p><strong>代码规范</strong></p>
+<ol>
+<li>
+开发工具的选取
+<ol>
+<li>不像C/S结构程序开发，可以一门语言从头到尾，你用Delphi，就是Delphi程序员，你用VC++，你就是VC程序员。B/S结构的Web 开发工作，工具的选择是一件痛苦的事情。 从Windows到Linux，从IIS到 Apache，从J2EE到 .NET， 从COM到.NET到EJB组件......还有 Asp、Asp.net、Jsp、Php、Perl、Javascript、Vbscript...... 美工也轻松不了多少，什么&quot;网页三剑客&quot; .谁都说自己是最强大的！ </li>
+<li>选用工具时最好是统一的，比如美工统一用DreamwaverMX制作网页，程序员全部用文本编辑器书写代码。统一工具的好处是可以保持同一个项目文档的一致性，便于开发人员的交流和文档的保存。</li>
+</ol>
+</li>
+<li>
+规范项目开发流程
+<ol>
+<li>在开始写一个项目的时候要先详细的进行需求分析，要在写代码前就有一个框架图处理，详细记录程序应该怎么去完成，大致走向如何。</li>
+</ol>
+</li>
+<li>
+技术规范
+<ol>
+<li>
+命名规则：模块<em>功能操作</em>页面返回. 后缀名描述
+<ol>
+<li>添加：add </li>
+<li>页面：result </li>
+<li>列表：list </li>
+<li>查询：query </li>
+<li>查询全部单页面：query_result  
+</li>
+<li>打印：print </li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+数据库名命名约定
+<ol>
+<li>表(Table)：格式 [tab]_[desc]。表名长度不能超过30个字符，多个单词间用连接符号。</li>
+<li>
+字段 (Field or Column)：格式f<em>[type]</em>[desc]。
+<ol>
+<li>f：表明这是一个字段名称。</li>
+<li>
+type：可选，表明字段类型
+<ol>
+<li>字符型为c</li>
+<li>整型为i</li>
+<li>逻辑型为b</li>
+<li>货币类型为m</li>
+<li>浮点型为f</li>
+<li>日期型为d</li>
+<li>时间型为t</li>
+<li>二进制为bl。 </li>
+<li>如果类型为字符型，可以省略。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+SQL语句书写规范
+<ol>
+<li>SQL语句中，SQL关键字全部大写，其它的遵照&quot;数据库命名约定&quot;。</li>
+</ol>
+</li>
+<li>
+文件夹命名
+<ol>
+<li>/img           公共图片</li>
+<li>/styles        样式表</li>
+<li>/js            脚本</li>
+<li>/ftps          下载</li>
+<li>/doc           项目相关素材、文档</li>
+<li>/readme.txt    项目说明文档</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<h1>Tomcat服务器介绍</h1>
+<blockquote>
+<p>javaEE中服务器有哪些？</p>
+<blockquote>
+<p><strong>Weblogic:</strong>大型收费，支持javaEE所有规范的服务器</p>
+<blockquote>
+<p>WebLogic是美国Oracle公司出品的一个application server，确切的说是一个基于JAVAEE架构的中间件，WebLogic是用于开发、集成、部署和管理大型分布式Web应用、网络应用和数据库应用的Java应用服务器。将Java的动态功能和Java Enterprise标准的安全性引入大型网络应用的开发、集成、部署和管理之中。</p>
+</blockquote>
+<p><strong>Webspere:</strong>大型收费，支持javaEE所有的服务器</p>
+<blockquote>
+<p>它包含了编写、运行和监视全天候的工业强度的随需应变 Web 应用程序和跨平台、跨产品解决方案所需要的整个中间件基础设施，如服务器、服务和工具。WebSphere 提供了可靠、灵活和健壮的软件。</p>
+</blockquote>
+<p><strong>Tomcat:</strong>中小型免费，支持servlet和jsp规范的服务器</p>
+<blockquote>
+<p>Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet 2.4 和JSP 2.0 规范。因为Tomcat 技术先进、性能稳定，而且免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。</p>
+</blockquote>
+</blockquote>
+<p><strong>为什么选择Tomcat</strong></p>
+<blockquote>
+<ol>
+<li>可以支持最新的Servlet和JSP的规范</li>
+<li>技术先进，性能稳定</li>
+<li><strong>开源免费 开源免费 开源免费</strong></li>
+</ol>
+</blockquote>
+<p><strong>Tomcat目录简介</strong></p>
+<blockquote>
+<ol>
+<li>bin：存放可执行程序</li>
+<li>conf：存放配置文件</li>
+<li>lib：存放的是Tomcat和程序运行时所需要的jar包</li>
+<li>logs：日志  Catalina（注意这个日志）</li>
+<li>temp：临时文件</li>
+<li>webapp：存放项目的目录</li>
+<li>work：存放jsp文件运行时产生的Java文件和class文件</li>
+</ol>
+</blockquote>
+<p><strong>如何在Eclipse中配置Tomcat</strong></p>
+<blockquote>
+<ol>
+<li>Window-&gt;Preferences-&gt;Server-&gt;Runtime Environments-&gt;add-&gt;Apache Tomcat v8.0-&gt;找到Tomcat安装路径-&gt;选择JRE版本-&gt;Finish</li>
+</ol>
+</blockquote>
+</blockquote>
+<h1>servlet</h1>
+<blockquote>
+<ol>
+<li>Servlet 为创建基于 web 的应用程序提供了基于组件、独立于平台的一个类。Servlet 有权限访问所有的 Java API，包括访问企业级数据库的 JDBC API。  
+</li>
+<li>Java Servlet 是运行在 Web 服务器或应用服务器servlet容器上的程序，它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数据库或应用程序之间的中间层。</li>
+<li>使用 Servlet，您可以收集来自网页表单的用户输入，呈现来自数据库或者其他源的记录，还可以动态创建网页。</li>
+</ol>
+<p><strong>静态网页静态网页</strong></p>
+<blockquote>
+<p>静态网页-htm、html，这些是网页的后缀，如果现在在一个服务器上直接读取这些内容，那么意味着是把这些网页的内容通过网络服务器展现给用户。整个静态WEB操作的过程图如下：
+<img src="j8.png" /></p>
+<ol>
+<li>客户端使用WEB浏览器（IE、FireFox等）经过网络(Network)连接到服务器上。</li>
+<li>使用HTTP协议发起一个请求（Request），告诉服务器我现在需要得到哪个页面，所有的请求交给WEB服务器，之后WEB服务器根据用户的需要，从文件系统（存放了所有静态页面的磁盘）取出内容。</li>
+<li>之后通过WEB服务器返回给(Response)客户端，客户端接收到内容之后经过浏览器渲染解析，得到显示的效果。</li>
+</ol>
+<p>动态网页-所谓的动态不是指页面会动，主要的特性的是：“WEB的页面展示效果因时因人而变”，而且动态WEB具有交互性，WEB的页面的内容可以动态更新。整个动态WEB操作的过程图如下：
+<img src="j9.png" /></p>
+<ol>
+<li>动态WEB中，程序依然使用客户端和服务端，客户端依然使用浏览器（IE、FireFox等），通过网络(Network)连接到服务器上。</li>
+<li>使用HTTP协议发起请求（Request），现在的所有请求都先经过一个WEB Server Plugin（服务器插件）来处理，此插件用于区分是请求的是静态资源(.htm或者是.htm)还是动态资源。</li>
+<li>如果WEB Server Plugin发现客户端请求的是静态资源(.htm或者是.htm)，则将请求直接转交给WEB服务器，之后WEB服务器从文件系统中取出内容，发送回客户端浏览器进行解析执行。</li>
+<li>如果WEB Server Plugin发现客户端请求的是动态资源（.jsp、.asp/.aspx、.php），则先将请求转交给WEB Container(WEB容器)，在WEB Container中连接数据库，从数据库中取出数据等一系列操作后动态拼凑页面的展示内容，拼凑页面的展示内容后，把所有的展示内容交给WEB服务器，之后通过WEB服务器将内容发送回客户端浏览器进行解析执行。</li>
+</ol>
+</blockquote>
+<p><strong>Servlet任务</strong></p>
+<ol>
+<li>读取客户端（浏览器）发送的显式的数据。这包括网页上的 HTML 表单，或者也可以是来自 applet 或自定义的 HTTP 客户端程序的表单。</li>
+<li>读取客户端（浏览器）发送的隐式的 HTTP 请求数据。这包括 cookies、媒体类型和浏览器能理解的压缩格式等等。</li>
+<li>处理数据并生成结果。这个过程可能需要访问数据库，执行 RMI 或 CORBA 调用，调用 Web 服务，或者直接计算得出对应的响应。</li>
+<li>发送显式的数据（即文档）到客户端（浏览器）。该文档的格式可以是多种多样的，包括文本文件（HTML 或 XML）、二进制文件（GIF 图像）、Excel 等。</li>
+<li>发送隐式的 HTTP 响应到客户端（浏览器）。这包括告诉浏览器或其他客户端被返回的文档类型（例如 HTML），设置 cookies 和缓存参数，以及其他类似的任务。</li>
+</ol>
+<p><strong>Servlet 生命周期</strong></p>
+<blockquote>
+<p><strong>init():</strong>init 方法被设计成只调用一次。它在第一次创建 Servlet 时被调用，在后续每次用户请求时不再调用。因此，它是用于一次性初始化。</p>
+<p><strong>service():</strong>service() 方法是执行实际任务的主要方法。Servlet 容器（即 Web 服务器）调用 service() 方法来处理来自客户端（浏览器）的请求，并把格式化的响应写回给客户端。</p>
+<p><strong>destroy():</strong>destroy() 方法只会被调用一次，在 Servlet 生命周期结束时被调用。destroy() 方法可以让您的 Servlet 关闭数据库连接、停止后台线程、把 Cookie 列表或点击计数器写入到磁盘，并执行其他类似的清理活动。</p>
+</blockquote>
+<p><strong>架构图</strong><br />
+<img src="j10.png" /></p>
+<blockquote>
+<ol>
+<li>第一个到达服务器的 HTTP 请求被委派到 Servlet 容器。</li>
+<li>Servlet 容器在调用 service() 方法之前加载 Servlet。</li>
+<li>然后 Servlet 容器处理由多个线程产生的多个请求，每个线程执行一个单一的 Servlet 实例的 service() 方法。</li>
+</ol>
+</blockquote>
+<p><strong>Servlet 部署</strong></p>
+<blockquote>
+<p>/WEB-INF/ 的 web.xml 文件中创建以下条目：</p>
+<pre><code>&lt;!-- 配置和映射servlet --&gt;
+&lt;servlet&gt;
+    &lt;!-- 注册servlet名 --&gt;
+    &lt;servlet-name&gt;HelloWorld&lt;/servlet-name&gt;
+    &lt;!-- servlet全类名 --&gt;
+    &lt;servlet-class&gt;path&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;HelloWorld&lt;/servlet-name&gt;
+    &lt;!-- 访问时的映射路径 --&gt;
+    &lt;url-pattern&gt;/HelloWorld&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre>
+
+<p>注意：</p>
+<ol>
+<li>同一个Servlet可以被映射到多个URL上，即多个&lt;servlet-mapping&gt;元素的&lt;servlet-name&gt;子元素的设置值可以是同一个Servlet的注册名。 </li>
+<li>在Servlet映射到的URL中也可以使用*通配符，但是只能有两种固定的格式：一种格式是“*.扩展名”，另一种格式是以正斜杠（/）开头并以“/*”结尾。</li>
+<li>指定servlet被创建的时机</li>
+</ol>
+<blockquote>
+<pre><code>&lt;!-- servlet被创建的时机 --&gt;
+&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+</code></pre>
+
+</blockquote>
+</blockquote>
+<p><strong>init(ServletConfig servletConfig)</strong></p>
+<blockquote>
+<p>servletConfig.getInitParameter(name)  
+</p>
+<blockquote>
+<p>根据字段名获取值,需要现在servlet中进行初始化配置</p>
+</blockquote>
+<p>servletConfig.getInitParameterNames()</p>
+<blockquote>
+<p>获取字段名Enumeration</p>
+</blockquote>
+<p>servletConfig.getServletName()</p>
+<blockquote>
+<p>获取servletName</p>
+</blockquote>
+<p>servletConfig.getServletContext()<br />
+获取ServletContext对象</p>
+</blockquote>
+<p><strong>ServletContext：</strong></p>
+<blockquote>
+<p>该对象代表当前web应用：可以认为ServletContext相当于一个管家，可以从中获取当前web应用的各方面信息。</p>
+<ol>
+<li>获取当前web应用的初始化参数：context.getInitParameter(&quot;driver&quot;);</li>
+<li>获取字段名Enumeration：context.getInitParameterNames();</li>
+<li>得到文件部署在服务器上的决对位置：context.getRealPath(&quot;/test.txt&quot;);</li>
+<li>获取工程路径：context.getContextPath();</li>
+</ol>
+<p>获取配置文件</p>
+<pre><code>//方法一
+ClassLoader cl = getClass().getClassLoader();
+InputStream is = cl.getResourceAsStream(&quot;db.properties&quot;);
+System.out.println(&quot;class:&quot;+is);
+
+//方法二
+//D:\工作\备课\J2EE\workspace_test\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Java02_web_servlet\WEB-INF\classes
+InputStream is = context.getResourceAsStream(&quot;/WEB-INF/classes/db.properties&quot;);
+System.out.println(&quot;context:&quot;+is);
+</code></pre>
+
+</blockquote>
+<p><strong>Servlet 表单数据</strong><br />
+很多情况下，需要传递一些信息，从浏览器到 Web 服务器，最终到后台程序。浏览器使用两种方法可将这些信息传递到 Web 服务器，分别为 GET 方法和 POST 方法。</p>
+<blockquote>
+<p>GET方法</p>
+<blockquote>
+<p>GET 方法是默认的从浏览器向 Web 服务器传递信息的方法，它会产生一个很长的字符串，出现在浏览器的地址栏中。如果您要向服务器传递的是密码或其他的敏感信息，请不要使用 GET 方法。GET 方法有大小限制：请求字符串中最多只能有 1024 个字符。后台通过doGet()方法处理。
+例如：页面和数据之间以?隔开对个数据之间用&amp;相连。</p>
+</blockquote>
+<p>POST 方法</p>
+<blockquote>
+<p>POST 方法打包信息的方式与 GET 方法基本相同，但是 POST 方法不是把信息作为 URL 中 ? 字符后的文本字符串进行发送，而是把这些信息作为一个单独的消息。消息以标准输出的形式传到后台程序，您可以解析和使用这些标准输出。Servlet 使用 doPost() 方法处理这种类型的请求。</p>
+</blockquote>
+</blockquote>
+<p><strong>ServletRequest</strong></p>
+<blockquote>
+<ol>
+<li>getParameter()：您可以调用 request.getParameter() 方法来获取表单参数的值。</li>
+<li>getParameterValues()：如果参数出现一次以上，则调用该方法，并返回多个值，例如复选框。</li>
+<li>getParameterNames()：如果您想要得到当前请求中的所有参数的完整列表，则调用该方法。</li>
+<li>getParameterMap():返回所有的参数</li>
+<li><strong>HttpServletRequest</strong></li>
+<li>getMethod()：返回请求方式</li>
+<li>getRequestURI()：返回请求的URI</li>
+<li>getQueryString():返回get请求的数据字符串</li>
+<li>getServletPath()：返回请求的servlet</li>
+</ol>
+</blockquote>
+<p><strong>ServletResponse</strong></p>
+<blockquote>
+<ol>
+<li>sendRedirect(java.lang.String.location) 重新定向客户端的请求</li>
+<li>void setContentType(String type) 设置响应的MIME类型</li>
+<li>PrintWriter getWriter() 返回可以向客户端输出字符的一个对象</li>
+</ol>
+<p>乱码处理</p>
+<ol>
+<li>数据库：连接后面加上?useUnicode=true&amp;characterEncoding=UTF-8</li>
+<li>把项目编码改成utf-8</li>
+<li>jsp页面上的编码全部设置为utf-8</li>
+<li>
+Servler中doGet()/doPost()加上
+<ol>
+<li>req.setCharacterEncoding(&quot;UTF-8&quot;);</li>
+<li>resp.setContentType(&quot;text/html;charset=UTF-8&quot;);</li>
+</ol>
+</li>
+<li>
+经过上面两步，get请求还是有乱码(处理如下)
+<ol>
+<li>str = new String(name.getBytes(&quot;ISO-8859-1&quot;), &quot;UTF-8&quot;)</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>作业：</p>
+<blockquote>
+<p>在web.xml中使用web应用初始化定义两个参数，id, pwd。定义一个表单，请求LoginServlet，如果请求的userID和userPwd和初始定义的相匹配，则返回hello username否则返回sorry username。</p>
+</blockquote>
+<p>GenericServlet</p>
+<blockquote>
+<p>一般为了我们使用方便，我们可以自己封装一个servlet。</p>
+<pre><code>public abstract class MyGenericServlet implements Servlet{
+
+    private ServletContext context;
+
+    public ServletContext getServletContext() {
+        return context;
+    }
+
+    @Override
+    public void destroy() {
+        // TODO Auto-generated method stub
+    }
+
+    @Override
+    public ServletConfig getServletConfig() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String getServletInfo() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void init(ServletConfig servletConfig) throws ServletException {
+        // TODO Auto-generated method stub
+        this.context = servletConfig.getServletContext();
+        init();
+    }
+
+    public void init() {
+        // TODO Auto-generated method stub
+
+    }
+}
+</code></pre>
+
+</blockquote>
+</blockquote>
+<h1>JSP</h1>
+<blockquote>
+<p><strong>JSP起源</strong></p>
+<ol>
+<li>在很多动态网页中，绝大部分内容都是固定不变的，只有局部内容需要动态产生和改变。 如果使用Servlet程序来输出只有局部内容需要动态改变的网页，其中所有的静态内容也需要程序员用Java程序代码产生，整个Servlet程序的代码将非常臃肿，编写和维护都将非常困难。  
+</li>
+<li>对大量静态内容的美工设计和相关HTML语句的编写，并不是程序员所要做的工作，程序员对此也不一定在行。网页美工设计和制作人员不懂Java编程，更是无法来完成这样的工作。 为了弥补 Servlet 的缺陷，SUN公司在Servlet的基础上推出了JSP（Java Server Pages）技术作为解决方案。 </li>
+<li>JSP是简化Servlet编写的一种技术，它将Java代码和HTML语句混合在同一个文件中编写，只对网页中的要动态产生的内容采用Java代码来编写，而对固定不变的静态内容采用普通静态HTML页面的方式编写。 </li>
+</ol>
+<p><strong>JSP直观认识</strong></p>
+<ol>
+<li>JSP页面是由HTML语句和嵌套在其中的Java代码组成的一个普通文本文件，JSP 页面的文件扩展名必须为.jsp。</li>
+<li>JSP文件就像普通的HTML文件一样，它们可以放置在WEB应用程序中的除了WEB-INF及其子目录外的其他任何目录中，JSP页面的访问路径与普通HTML页面的访问路径形式也完全一样。</li>
+<li>JSP的本质就是Servlet</li>
+</ol>
+<p><strong>JSP九大内置对象</strong></p>
+<blockquote>
+<ol>
+<li><strong>request:</strong>service方法传入的HttpServletRequest对象</li>
+<li><strong>response：</strong>service方法传入的HttpServletResponse对象，在就JSP页面基本不会调用</li>
+<li><strong>pageContext：</strong>页面上下文对象，可以从这个页面得到其他的8个隐含对象。也可以获取到当前页面的其他信息</li>
+<li><strong>session：</strong>代表服务器的一次会话，后面会详细学习</li>
+<li><strong>application：</strong>代表web应用，是ServletContext对象</li>
+<li><strong>config：</strong>当前页面对应的Servlet的ServletConfig对象（基本不用），如果需要使用则需要配置JSP页面</li>
+<li><strong>out:</strong>JspWriter对象，用于向浏览器输出字符串。常用方法out.println();</li>
+<li><strong>page:</strong>指向当前JSP对应的servlet对象，但是是Object类型，所以只能调用Object方法，所以基本不使用。</li>
+<li>
+<strong>exception:</strong>只有声明了page指令的isErrorPage=&quot;true&quot;才可以使用。
+<ol>
+<li>&lt;%@ page isErrorPage=&quot;true&quot; %&gt;</li>
+</ol>
+</li>
+</ol>
+<p><strong>记忆</strong><br />
+pageContext、request、session、application（作用范围从小到大）<br />
+out、response、config、page<br />
+exception</p>
+</blockquote>
+<p><strong>JSP</strong></p>
+<blockquote>
+<p>Java Server Page: java 服务器网页：在HTML页面编写java代码的页面。</p>
+</blockquote>
+<p><strong>JSP语法</strong></p>
+<blockquote>
+<p>JSP模版元素 </p>
+<blockquote>
+<p>JSP页面中的静态HTML内容称之为JSP模版元素，在静态的HTML内容之中可以嵌套JSP的其他各种元素来产生动态内容和执行业务逻辑。 </p>
+</blockquote>
+<p>JSP表达式</p>
+<blockquote>
+<p>JSP表达式（expression）提供了将一个java变量或表达式的计算结果输出到客户端的简化方式，它将要输出的变量或表达式直接封装在&lt;%= 和 %&gt;之中。<br />
+例如：&lt;%= new java.util.Date() %&gt; </p>
+</blockquote>
+<p>JSP脚本</p>
+<blockquote>
+<p>JSP脚本片断（scriptlet）是指嵌套在&lt;% 和 %&gt;之中的一条或多条Java程序代码。</p>
+<pre><code>&lt;% 
+    String age = request.getParameter(&quot;age&quot;);
+    Integer age_i = Integer.parseInt(age);
+    if(age_i &gt; 18){
+%&gt;
+        成年
+&lt;%  
+    }else{
+%&gt;
+        未成年
+&lt;%
+    }   
+%&gt; 
+</code></pre>
+
+</blockquote>
+<p>JSP声明(基本不使用)</p>
+<blockquote>
+<p>JSP声明将Java代码封装在&lt;%！和 %&gt;之中，它里面的代码将被插入进Servlet的_jspService方法的外面，所以，JSP声明可用于定义JSP页面转换成的Servlet程序的静态代码块、成员变量和方法 。 </p>
+<pre><code>&lt;%!
+static {
+    System.out.println(&quot;loading Servlet!&quot;); 
+}
+private int globalVar = 0;
+public void jspInit()
+{
+    System.out.println(&quot;initializing jsp!&quot;);
+}
+%&gt;
+</code></pre>
+
+</blockquote>
+<p>JSP注释的格式</p>
+<blockquote>
+<p>&lt;%-- 注释信息 --%&gt;<br />
+JSP引擎在将JSP页面翻译成Servlet程序时，忽略JSP页面中被注释的内容。 </p>
+</blockquote>
+</blockquote>
+<p><strong>属性</strong></p>
+<blockquote>
+<p>方法：  
+</p>
+<ol>
+<li>request.setAttribute(arg0, arg1)  
+</li>
+<li>getAttribute(arg0)  
+</li>
+<li>removeAttribute(arg0)  
+</li>
+</ol>
+<p>有四个内置对象中可以设置属性，这四个对象称之为域对象</p>
+<ol>
+<li>pageContext:属性的作用域仅限于当前JSP</li>
+<li>request:属性的作用域仅限于同一请求</li>
+<li>session：属性的作用域限于一次会话：浏览器打开关闭称之为一次会话（session不失效）</li>
+<li>application：属性作用域限于当前WEB应用。只要一处设置，全部的servlet都可以访问</li>
+</ol>
+</blockquote>
+<p><strong>请求的转发和重定向</strong></p>
+<blockquote>
+<p>转发</p>
+<blockquote>
+<p>当使用转发时，JSP容器将使用一个内部的方法来调用目标页面，新的页面继续处理同一个请求，而浏览器将不会知道这个过程。使用转发时，该URL会保持不变。</p>
+<pre><code>request.getRequestDispatcher(&quot;/url&quot;).forward(request, response);
+</code></pre>
+
+</blockquote>
+<p>重定向</p>
+<blockquote>
+<p>重定向方式的含义是第一个页面通知浏览器发送一个新的页面请求。使用重定向时，浏览器中所显示的URL会变成新页面的URL。重定向的速度比转发慢，因为浏览器还得发出一个新的请求。由于重定向方式产生了一个新的请求，所以经过一次重定向后，request内的对象将无法使用。</p>
+<pre><code>response.sendRedirect(&quot;url&quot;);
+</code></pre>
+
+</blockquote>
+<p><strong>转发和重定向的区别：</strong></p>
+<blockquote>
+<p>请求的转发:地址栏是初次请求的地址<br />
+请求的重定向：地址栏不再是初次请求的地址。地址栏为最后响应的那个地址</p>
+<p>请求的转发:最终的Servlet对象和中转的Servlet是同一个对象<br />
+请求的重定向：最终的Servlet对象和中转的Servlet不是是同一个对象</p>
+<p>请求的转发:只能转发当前 WEB 应用程序中的资源<br />
+请求的重定向：可以重定向任何资源</p>
+<p>请求的转发:/代表当前WEB应用的根目录<br />
+请求的重定向：/代表当前WEB站点的根目录</p>
+</blockquote>
+</blockquote>
+<p><strong>JSP指令</strong></p>
+<blockquote>
+<p>JSP指令（directive）是为JSP引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎如何处理JSP页面中的其余部分。</p>
+<p><strong>page指令</strong>  
+</p>
+<blockquote>
+<p>import:指定当前页面所用的脚本语言<br />
+session：指定当前页面是否可用session对象<br />
+errorPage or isErrorPage：指定出错后显示的响应页面，'/'代表当前web应用的根目录。isErrorPage属性设置当前页面是否可以使用exception内置对象。错误界面一般不可以直接访问。<br />
+contentType:指定当前页面的响应方式。实际调用的是response.setContextType()方法。<br />
+pageEncoding:指定当前JSP页面的字符编码<br />
+isELIgnored:指定当前JSP页面是否忽略EL表达式</p>
+</blockquote>
+<p><strong>include指令</strong></p>
+<blockquote>
+<p>include指令用于通知JSP引擎在翻译当前JSP页面时将其他文件中的内容合并进当前JSP页面转换成的Servlet源文件中，这种在源文件级别进行引入的方式称之为静态引入，当前JSP页面与静态引入的页面紧密结合为一个Servlet。</p>
+</blockquote>
+<p><strong>静态包含</strong><br />
+语法：&lt;%@ include file=&quot;relativeURL&quot;%&gt;</p>
+<blockquote>
+<p>file属性的设置值必须使用相对路径，如果以“/”开头，表示相对于当前WEB应用程序的根目录（注意不是站点根目录），否则，表示相对于当前文件。</p>
+</blockquote>
+<p><strong>动态包含</strong>
+语法：&lt;jsp:include  page=&quot;b.jsp&quot;&gt;</p>
+<blockquote>
+<p>生成两个servlet，被通过方法进行加载进来。<br />
+相当于转发操作，可以传递参数</p>
+<pre><code>&lt;!-- b.jsp --&gt;
+&lt;jsp:include page=&quot;a.jsp&quot;&gt;
+    &lt;jsp:param value=&quot;root&quot; name=&quot;user&quot;/&gt;
+&lt;/jsp:include&gt;
+
+&lt;!-- a.jsp --&gt;
+&lt;%=request.getParameter(&quot;user&quot;)%&gt;
+</code></pre>
+
+</blockquote>
+</blockquote>
+<p><strong>在web.xml中配置异常页面</strong></p>
+<blockquote>
+<pre><code>&lt;error-page&gt;
+    &lt;!-- 指定出错代码 --&gt;
+    &lt;error-code&gt;404&lt;/error-code&gt;
+    &lt;!-- 指定响应界面 --&gt;
+    &lt;location&gt;error.jsp&lt;/location&gt;
+&lt;/error-page&gt;
+
+&lt;error-page&gt;
+    &lt;!-- 指定异常类型 --&gt;
+    &lt;exception-type&gt;java.lang.Exception&lt;/exception-type&gt;
+    &lt;!-- 指定响应界面 --&gt;
+    &lt;location&gt;error.jsp&lt;/location&gt;
+&lt;/error-page&gt;
+</code></pre>
+
+</blockquote>
+</blockquote>
+<h1>MVC</h1>
+<blockquote>
+<p><img src="j11.png" /></p>
+<blockquote>
+<p>不方便显示</p>
+</blockquote>
+<p><img src="j12.png" /></p>
+<blockquote>
+<p>写java代码不方便</p>
+</blockquote>
+<p><img src="j13.png" /></p>
+<blockquote>
+<p>最终解决方案</p>
+</blockquote>
+<p>MVC概念</p>
+<blockquote>
+<p>MVC是Model-View-Controller的简称，即模型-视图-控制器。<br />
+MVC是一种设计模式，它把应用程序分成三个核心模块：模型、视图、控制器，它们各自处理自己的任务。</p>
+<p><strong>模型：</strong></p>
+<blockquote>
+<ol>
+<li>模型是应用程序的主体部分，模型表示业务数据和业务逻辑</li>
+<li>一个模型能为多个视图提供数据。</li>
+<li>由于应用于模型的代码只需写一次就可以被多个视图重用，所以提高了代码的可重用性。</li>
+</ol>
+</blockquote>
+<p><strong>视图：</strong></p>
+<blockquote>
+<ol>
+<li>视图是用户看到并与之交互的界面</li>
+<li>视图向用户显示相关的数据。</li>
+<li>接受用户的输入。</li>
+<li>不进行任何实际的业务处理。</li>
+</ol>
+</blockquote>
+<p><strong>控制器：</strong></p>
+<blockquote>
+<ol>
+<li>控制器接受用户的输入并调用模型和视图去完成用户的需求。</li>
+<li>控制器接收请求并决定调用哪个模型组件去处理请求，然后决定调用哪个视图来显示模型处理返回的数据。</li>
+</ol>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1>Cookie</h1>
+<blockquote>
+<p>Cookie，有时也用其复数形式 Cookies，指某些网站为了辨别用户身份、进行 session 跟踪而储存在用户本地终端上的数据（通常经过加密）。  
+</p>
+<p><strong>传送过程示意图</strong>
+<img src="j14.png" />
+<strong>API</strong></p>
+<blockquote>
+<ol>
+<li>Cookie(String name, String value) //构造方法，用于创建cookie</li>
+<li>public String getName() //得到name</li>
+<li>public String getValue() //得到值</li>
+<li>public void setMaxAge(int expiry) //设置有效时间</li>
+<li>public void setPath() //设置有效路径</li>
+</ol>
+</blockquote>
+<p><strong>介绍</strong></p>
+<blockquote>
+<ol>
+<li>一个Cookie只能标识一种信息，它至少含有一个标识该信息的名称（NAME）和设置值（VALUE）。</li>
+<li>一个WEB站点可以给一个WEB浏览器发送多个Cookie，一个WEB浏览器也可以存储多个WEB站点提供的Cookie。</li>
+<li>浏览器一般只允许存放300个Cookie，每个站点最多存放20个Cookie，每个Cookie的大小限制为4KB。</li>
+<li>如果创建了一个cookie，并将他发送到浏览器，默认情况下它是一个会话级别的cookie（即存储在浏览器的内存中），用户退出浏览器之后即被删除。若希望浏览器将该cookie存储在磁盘上，则需要使用maxAge，并给出一个以秒为单位的时间。将最大时效设为0则是命令浏览器删除该cookie。</li>
+</ol>
+</blockquote>
+<p><strong>会话cookie和持久cookie的区别</strong></p>
+<blockquote>
+<ol>
+<li>如果不设置过期时间，则表示这个cookie生命周期为浏览器会话期间，只要关闭浏览器窗口，cookie就消失了。这种生命期为浏览器会话期的cookie被称为会话cookie。会话cookie一般不保存在硬盘上而是保存在内存里。</li>
+<li>如果设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再次打开浏览器，这些cookie依然有效直到超过设定的过期时间。</li>
+</ol>
+</blockquote>
+<p><strong>中文操作</strong></p>
+<blockquote>
+<p>存储中文数据</p>
+<pre><code>Cookie cookie = new Cookie(&quot;userName&quot;, URLEncoder.encode(&quot;软帝集团&quot;, &quot;UTF-8&quot;));
+2response.addCookie(cookie);
+</code></pre>
+
+<p>获取中文数据</p>
+<pre><code>URLDecoder.decode(cookies[i].getValue(), &quot;UTF-8&quot;)
+</code></pre>
+
+</blockquote>
+<p>作业：帮助网站实现提示客户端计算机上次访问网站的时间 </p>
+</blockquote>
+<h1>Session</h1>
+<ol>
+<li>session，中文经常翻译为会话，其本来的含义是指有始有终的一系列动作/消息，比如打电话是从拿起电话拨号到挂断电话这中间的一系列过程可以称之为一个session。</li>
+<li>session在Web开发环境下的语义又有了新的扩展，它的含义是指一类用来在客户端与服务器端之间保持状态的解决方案。有时候Session也用来指这种解决方案的存储结构。</li>
+</ol>
+<blockquote>
+<p><strong>session机制</strong></p>
+<blockquote>
+<ol>
+<li>session机制采用的是在服务器端保持 HTTP 状态信息的方案 。</li>
+<li>服务器使用一种类似于散列表的结构(也可能就是使用散列表)来保存信息。</li>
+<li>当程序需要为某个客户端的请求创建一个session时，服务器首先检查这个客户端的请求里是否包含了一个session标识(即sessionId),如果已经包含一个sessionId则说明以前已经为此客户创建过session，服务器就按照session id把这个session检索出来使用(如果检索不到，可能会新建一个，这种情况可能出现在服务端已经删除了该用户对应的session对象，但用户人为地在请求的URL后面附加上一个JSESSION的参数)。如果客户请求不包含sessionId，则为此客户创建一个session并且生成一个与此session相关联的sessionId，这个session id将在本次响应中返回给客户端保存。</li>
+</ol>
+</blockquote>
+<p><strong>保存session id的几种方式</strong></p>
+<blockquote>
+<ol>
+<li>保存session id的方式可以采用cookie，这样在交互过程中浏览器可以自动的按照规则把这个标识发送给服务器。</li>
+<li>由于cookie可以被人为的禁用，必须有其它的机制以便在cookie被禁用时仍然能够把session id传递回服务器，经常采用的一种技术叫做URL重写，就是把session id附加在URL路径的后面，附加的方式也有两种，一种是作为URL路径的附加信息，另一种是作为查询字符串附加在URL后面。网络在整个交互过程中始终保持状态，就必须在每个客户端可能请求的路径后面都包含这个session id。</li>
+<li>session通过SessionID来区分不同的客户, session是以cookie或URL重写为基础的，默认使用cookie来实现，系统会创造一个名为JSESSIONID的输出cookie，这称之为session cookie,以区别persistent cookies(也就是我们通常所说的cookie),session cookie是存储于浏览器内存中的，并不是写到硬盘上的，通常看不到JSESSIONID，但是当把浏览器的cookie禁止后，web服务器会采用URL重写的方式传递Sessionid。</li>
+</ol>
+</blockquote>
+<p><strong>Session的创建与删除</strong></p>
+<blockquote>
+<p>创建：一个常见的错误是以为session在有客户端访问时就被创建，然而事实是直到某server端程序(如Servlet)调用HttpServletRequest.getSession(true) 或者 HttpServletRequest.getSession()这样的语句时才会被创建。</p>
+<p>什么时候创建session对象</p>
+<ol>
+<li>是否浏览器访问服务端的任何一个 JSP 或 Servlet，服务器都会立即创建一个 HttpSession 对象呢？不一定。若当前的 JSP（或 Servlet） 是客户端访问的当前 WEB 应用的第一个资源，且 JSP 的 page 指定的 session 属性值为 false, 则服务器就不会为 JSP 创建一个 HttpSession 对象；若当前 JSP 不是客户端访问的当前 WEB 应用的第一个资源，且其他页面已经创建一个 HttpSession 对象，则当前 JSP 页面会返回一个会话的 HttpSession 对象，而不会创建一个新的 HttpSession‘ 对象</li>
+<li>session=“false“  到底表示什么意思？当前 JSP 页面禁用 session 隐含变量！但可以使用其他的显式的 HttpSession 对象</li>
+<li>对于 Serlvet 而言：若 Serlvet 是客户端访问的第一个 WEB 应用的资源，则只有调用了 request.getSession() 或 request.getSession(true) 才会创建 HttpSession 对象</li>
+</ol>
+<p>删除：</p>
+<ol>
+<li>程序调用HttpSession.invalidate()</li>
+<li>距离上一次收到客户端发送的session id时间间隔超过了session的最大有效时间</li>
+<li>服务器进程被停止</li>
+<li>关闭浏览器只会使存储在客户端浏览器内存中的session cookie失效，不会使服务器端的session对象失效。</li>
+</ol>
+</blockquote>
+<p><strong>Session的超时管理</strong></p>
+<blockquote>
+<ol>
+<li>WEB服务器无法判断当前的客户端浏览器是否还会继续访问，也无法检测客户端浏览器是否关闭，所以，即使客户已经离开或关闭了浏览器，WEB服务器还要保留与之对应的HttpSession对象。 </li>
+<li>随着时间的推移而不断增加新的访问客户端，WEB服务器内存中将会因此积累起大量的不再被使用的HttpSession对象，并将最终导致服务器内存耗尽。 </li>
+<li>WEB服务器采用“超时限制”的办法来判断客户端是否还在继续访问，如果某个客户端在一定的时间之内没有发出后续请求，WEB服务器则认为客户端已经停止了活动，结束与该客户端的会话并将与之对应的HttpSession对象变成垃圾。</li>
+<li>如果客户端浏览器超时后再次发出访问请求，WEB服务器则认为这是一个新的会话的开始，将为之创建新的HttpSession对象和分配新的会话标识号。 </li>
+<li>会话的超时间隔可以在web.xml文件中设置，其默认值由Servlet容器定义。   
+</li>
+</ol>
+<blockquote>
+<pre><code>&lt;session-config&gt;
+    &lt;session-timeout&gt;30&lt;/session-timeout&gt;
+&lt;/session-config&gt;
+</code></pre>
+
+</blockquote>
+</blockquote>
+<p><strong>HttpSession接口中的方法</strong></p>
+<blockquote>
+<ol>
+<li>getId()</li>
+<li>getCreationTime()</li>
+<li>getLastAccessedTime()</li>
+<li>setMaxInactiveInterval()</li>
+<li>getMaxInactiveInterval()</li>
+<li>isNew()</li>
+<li>invalidate()</li>
+<li>setAttribute()</li>
+<li>getAttribute()</li>
+<li>removeAttribute()</li>
+<li>getAttributeNames()</li>
+</ol>
+</blockquote>
+<p><strong>application域范围的属性</strong></p>
+<blockquote>
+<p>所有用户公用一个application对象</p>
+</blockquote>
+<p><strong>表单的重复提交</strong></p>
+<blockquote>
+<p><strong>表单重复提交的情况：</strong></p>
+<ol>
+<li>表单提交到一个Servlet，而Servlet又通过转发的方式响应一个JSP页面，此时地址栏的路径没有发生改变，在响应页面点击刷新</li>
+<li>在响应页面没有到达的时候重复点击提交按钮</li>
+<li>点击返回，再点击提交</li>
+<li>注：点击返回，刷新，再提交不是表单的重复提交</li>
+</ol>
+<p><strong>如何避免表单的重复提交？</strong></p>
+<blockquote>
+<p>在表单做一个标记，提交到Servlet时，检查标记是否与预定义的标记一致，若一致则受理，并销毁标记，若不一致或者没有标记，则直接响应重复提交。</p>
+</blockquote>
+<p><strong>如何实现</strong></p>
+<ol>
+<li>
+提供一个隐藏域：&lt;input type=&quot;hidden&quot; name=&quot;token&quot; value=&quot;farsight&quot;\/&gt;
+<ol>
+<li>行不通：没有清除参数的方法。</li>
+</ol>
+</li>
+<li>
+把标记放到request中。
+<ol>
+<li>行不通：应为表单页面刷新后request已经被销毁，再提交表单是一个新的request。</li>
+</ol>
+</li>
+<li>
+把标记放到session中。
+<ol>
+<li>在原表单页面，生成一个随机的token</li>
+<li>在原表单页面把token值放入session属性中</li>
+<li>在原表单中把token值放入隐藏域中</li>
+<li>在目标servlet中获取session和隐藏域中的token值</li>
+<li>比较两个值是否一致，若一致，受理并把session中的token值销毁</li>
+<li>若不一致，则直接响应提示页面：重复提交</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<h1>javaBean</h1>
+<blockquote>
+<p>创建javaBean对象</p>
+<pre><code>&lt;!-- 
+    1.先检测request中是否有属性名为stu的Student对象
+    2.如果有对应的属性，则取出
+    3.如果没有则创建Student对象并把它保存到request中属性名为id值
+ --&gt;
+&lt;jsp:useBean id=&quot;stu&quot; class=&quot;com.test.po.Student&quot; scope=&quot;request&quot;&gt;&lt;/jsp:useBean&gt;
+</code></pre>
+
+<p>设置javaBean的属性值</p>
+<pre><code>&lt;!-- 通过属性名进行参数设置 --&gt;
+&lt;jsp:setProperty property=&quot;id&quot; value=&quot;1&quot; name=&quot;stu&quot;/&gt;
+&lt;jsp:setProperty property=&quot;name&quot; value=&quot;张三&quot; name=&quot;stu&quot;/&gt;
+
+&lt;!-- 通过对应的参数名给所有匹配的属性赋值，通过浏览器提交的数据进行匹配 --&gt;
+&lt;jsp:setProperty property=&quot;*&quot; name=&quot;stu&quot;/&gt;
+</code></pre>
+
+<p>获得JavaBean属性值</p>
+<pre><code>&lt;!-- 获取JavaBean的值并输出到浏览器中 --&gt;
+id:&lt;jsp:getProperty property=&quot;id&quot; name=&quot;stu&quot;/&gt;&lt;br&gt;
+name:&lt;jsp:getProperty property=&quot;name&quot; name=&quot;stu&quot;/&gt;&lt;br&gt;
+age:&lt;jsp:getProperty property=&quot;age&quot; name=&quot;stu&quot;/&gt;&lt;br&gt;
+</code></pre>
+
+</blockquote>
+<h1>EL表达式</h1>
+<blockquote>
+<p><strong>EL表达式简介</strong><br />
+EL 全名为Expression Language。EL主要作用：  
+</p>
+<ol>
+<li>
+获取数据
+<ol>
+<li>EL表达式主要用于替换JSP页面中的脚本表达式，以从各种类型的web域 中检索java对象、获取数据。(某个web域 中的对象，访问javabean的属性、访问list集合、访问map集合、访问数组)</li>
+</ol>
+</li>
+<li>
+执行运算
+<ol>
+<li>利用EL表达式可以在JSP页面中执行一些基本的关系运算、逻辑运算和算术运算，以在JSP页面中完成一些简单的逻辑运算。${user==null}</li>
+</ol>
+</li>
+<li>
+获取web开发常用对象
+<ol>
+<li>EL 表达式定义了一些隐式对象，利用这些隐式对象，web开发人员可以很轻松获得对web常用对象的引用，从而获得这些对象中的数据。</li>
+</ol>
+</li>
+</ol>
+<p><strong>获取语法</strong></p>
+<blockquote>
+<p>${sessionScope.stu.age } <br />
+${sessionScope[&quot;stu&quot;].age }</p>
+</blockquote>
+<p><strong>EL的隐含对象</strong></p>
+<blockquote>
+<p>和范围有关的隐含对象</p>
+<ol>
+<li>pageScope</li>
+<li>requestScope</li>
+<li>sessionScope</li>
+<li>applicationScope</li>
+</ol>
+<p>和输入有关的隐含对象</p>
+<ol>
+<li>param</li>
+<li>paramValues</li>
+</ol>
+<p>其他隐含对象</p>
+<ol>
+<li>cookie</li>
+<li>header</li>
+<li>headerValues</li>
+<li>initParam</li>
+<li>pageContext</li>
+</ol>
+</blockquote>
+<p><strong>运算符</strong></p>
+<blockquote>
+<p>empty:判断集合是否为null或是否有元素</p>
+<pre><code>&lt;%
+    List&lt;String&gt; list = new ArrayList&lt;&gt;();
+    list.add(&quot;a&quot;);
+    request.setAttribute(&quot;list&quot;, list);
+%&gt;
+&lt;br&gt;
+&lt;!-- 如果list为null或长度为0返回true，否则返回false --&gt;
+empty:${empty list }
+</code></pre>
+
+</blockquote>
+</blockquote>
+<h1>JSTL</h1>
+<p><img src="j20.png" /></p>
+<blockquote>
+<p><strong>分类</strong>
+<img src="j23.png" /></p>
+<p><strong>表达式操作</strong></p>
+<blockquote>
+<p>out</p>
+<pre><code>&lt;!-- escapeXml:是否发生转译 --&gt;
+&lt;c:out value=&quot;${requestScope.book }&quot; default=&quot;默认值&quot; escapeXml=&quot;true&quot;&gt;&lt;/c:out&gt;
+</code></pre>
+
+<p>set</p>
+<pre><code>&lt;!-- 往作用域对象中添加属性 value 可以使用EL表达式--&gt;
+&lt;c:set value=&quot;java&quot; var=&quot;b&quot; scope=&quot;request&quot;&gt;&lt;/c:set&gt;
+&lt;c:set value=&quot;${param.book }&quot; var=&quot;b&quot; scope=&quot;request&quot;&gt;&lt;/c:set&gt;
+
+&lt;!-- 为属性中的JavaBean属性进行赋值 --&gt;    
+&lt;jsp:useBean id=&quot;stu&quot; class=&quot;com.test.po.Student&quot; scope=&quot;session&quot;&gt;&lt;/jsp:useBean&gt;
+&lt;c:set target=&quot;${sessionScope.stu }&quot; property=&quot;id&quot; value=&quot;1&quot; &gt;&lt;/c:set&gt;
+</code></pre>
+
+<p>remove</p>
+<pre><code>&lt;c:set value=&quot;java&quot; var=&quot;test&quot; scope=&quot;session&quot;&gt;&lt;/c:set&gt;
+test:${test }&lt;br&gt;
+&lt;c:remove var=&quot;test&quot; scope=&quot;session&quot;/&gt;
+test:${test }&lt;br&gt;
+</code></pre>
+
+</blockquote>
+<p><strong>流程控制操作</strong></p>
+<blockquote>
+<p>if</p>
+<pre><code>&lt;!-- 可以判断是否成立，但是没有else --&gt;
+&lt;c:if test=&quot;${param.age &gt; 18 }&quot;&gt;成年&lt;/c:if&gt;
+&lt;!-- 可以把结果保存到属性中 --&gt;
+&lt;c:if test=&quot;${param.age &gt; 18 }&quot; var=&quot;res&quot; scope=&quot;session&quot;&gt;&lt;/c:if&gt;
+res:${res }
+</code></pre>
+
+<p>choose..when..otherwise</p>
+<pre><code>&lt;!-- choose..when..otherwise实现if else if else --&gt;
+&lt;c:choose&gt;
+    &lt;c:when test=&quot;${param.age &gt; 60 }&quot;&gt;老年&lt;/c:when&gt;
+    &lt;c:when test=&quot;${param.age &gt; 35 }&quot;&gt;中年&lt;/c:when&gt;
+    &lt;c:when test=&quot;${param.age &gt; 18 }&quot;&gt;青年&lt;/c:when&gt;
+    &lt;c:otherwise&gt;少年&lt;/c:otherwise&gt;
+&lt;/c:choose&gt;
+</code></pre>
+
+</blockquote>
+<p><strong>迭代器操作</strong></p>
+<blockquote>
+<p>forEach</p>
+<pre><code>&lt;!-- 实现for循环 --&gt;
+&lt;c:forEach begin=&quot;0&quot; end=&quot;10&quot; step=&quot;1&quot; var=&quot;i&quot;&gt;
+    ${i }&lt;br&gt;
+&lt;/c:forEach&gt;
+&lt;!-- 遍历list --&gt;
+&lt;%
+    List&lt;String&gt; list = new ArrayList&lt;&gt;();
+    list.add(&quot;a&quot;);
+    list.add(&quot;b&quot;);
+    list.add(&quot;c&quot;);
+    list.add(&quot;d&quot;);
+    list.add(&quot;e&quot;);
+    request.setAttribute(&quot;list&quot;, list);
+%&gt;
+&lt;c:forEach var=&quot;str&quot; items=&quot;${list }&quot;&gt;
+    ${str }&lt;br&gt;
+&lt;/c:forEach&gt;
+&lt;%
+    Map&lt;String,String&gt; map = new HashMap&lt;&gt;();
+    map.put(&quot;key1&quot;, &quot;a&quot;);
+    map.put(&quot;key2&quot;, &quot;b&quot;);
+    map.put(&quot;key3&quot;, &quot;c&quot;);
+    map.put(&quot;key4&quot;, &quot;d&quot;);
+    map.put(&quot;key5&quot;, &quot;e&quot;);
+    request.setAttribute(&quot;map&quot;, map);
+%&gt;
+&lt;!-- 遍历Map --&gt;
+&lt;c:forEach var=&quot;m&quot; items=&quot;${map }&quot;&gt;
+    ${m.key } - ${m.value }&lt;br&gt;
+&lt;/c:forEach&gt;
+</code></pre>
+
+<p>forTokens</p>
+<pre><code>&lt;!-- 相当于String的split()方法 --&gt;
+&lt;%
+    request.setAttribute(&quot;tokens&quot;, &quot;a.b.c,d,e,f,g&quot;);
+%&gt;
+&lt;c:forTokens items=&quot;${tokens }&quot; delims=&quot;,&quot; var=&quot;r&quot;&gt;
+    ${r }
+&lt;/c:forTokens&gt;
+</code></pre>
+
+</blockquote>
+<p><strong>URL操作</strong></p>
+<blockquote>
+<p>import</p>
+<pre><code>&lt;!-- 包含一个页面进来，作为了解 --&gt;
+&lt;c:import url=&quot;http://www.baidu.com&quot;&gt;&lt;/c:import&gt;
+</code></pre>
+
+<p>redirect</p>
+<pre><code>&lt;!-- 重定向到一个页面 --&gt;
+&lt;c:redirect url=&quot;index.jsp&quot;&gt;&lt;/c:redirect&gt;
+&lt;!-- 转发到一个指定页面 --&gt;
+&lt;jsp:forward page=&quot;index.jsp&quot;&gt;&lt;/jsp:forward&gt;
+</code></pre>
+
+<p>url</p>
+<pre><code>&lt;c:url value=&quot;/index.jsp&quot; var=&quot;url&quot; scope=&quot;session&quot;&gt;
+    &lt;c:param name=&quot;name&quot; value=&quot;111&quot;&gt;&lt;/c:param&gt;
+&lt;/c:url&gt;
+URL : ${url }
+</code></pre>
+
+</blockquote>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
